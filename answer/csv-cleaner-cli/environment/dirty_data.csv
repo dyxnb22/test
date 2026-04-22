@@ -1,0 +1,10 @@
+ id , name , email , age , score 
+1, alice   smith ,ALICE@EXAMPLE.COM, 30 , 88.456
+2, Bob,,25, 91
+3,   charlie, charlie@example, 40,70
+4, dora , dora@example.com, 130, 101
+4, dup row , dup@example.com, 20, 50
+abc, Eve, eve@example.com, 22, 77
+5, frank, frank@example.com, -1, 60.1
+
+6,  grace hopper , GRACE@EXAMPLE.COM , 85, 100
