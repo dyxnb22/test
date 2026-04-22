@@ -23,10 +23,11 @@ csv-cleaner-cli/
     └── test.sh               # 测试入口 (必须返回 exit code 0 或 1)
 
 ## 评分标准
-1. **可运行性**：我们会在纯净的 Linux 环境下执行 `docker build` 和 `tests/test.sh`，必须一次跑通。
+1. **可运行性**：我们会在纯净的 Linux 环境下执行 `docker build` 和 `solution/solve.sh`、`tests/test.sh`，必须一次跑通。
 2. **鲁棒性**：你的测试脚本必须能拦截“错误答案”（例如：如果 AI 只是复制了文件没做清洗，测试必须报错）。
 3. **规范性**：`task.toml` 填写是否完整，Dockerfile 是否锁定了版本。
 4. **数据构造能力**：`dirty_data.csv` 是否包含足够的边界情况（如空行、非法字符）。
 
 ## 提交方式
-请将文件夹打包为 `yourname_assessment.zip` 发送回邮件。
+1. 请将以上文件夹打包为 `yourname_assessment.zip`提交。
+2. 请另进行录屏，录屏内容（不超过十分钟）：在本地docker里面的测试、以及解题的完整思路。
