@@ -16,6 +16,9 @@ def email_valid(email: str) -> bool:
 
 
 def parse_age(age_raw: str) -> str:
+    age_raw = age_raw.strip()
+    if age_raw == "":
+        return ""
     try:
         age = int(age_raw)
     except ValueError:
@@ -24,6 +27,9 @@ def parse_age(age_raw: str) -> str:
 
 
 def parse_score(score_raw: str) -> str:
+    score_raw = score_raw.strip()
+    if score_raw == "":
+        return ""
     try:
         score = float(score_raw)
     except ValueError:
@@ -33,7 +39,7 @@ def parse_score(score_raw: str) -> str:
     return ""
 
 
-def clean_rows(input_path: Path):
+def clean_rows(input_path: Path) -> list[dict[str, str]]:
     cleaned = []
     seen_ids = set()
 
@@ -84,7 +90,7 @@ def clean_rows(input_path: Path):
     return cleaned
 
 
-def write_rows(rows, output_path: Path) -> None:
+def write_rows(rows: list[dict[str, str]], output_path: Path) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=["id", "name", "email", "age", "score"])
