@@ -28,18 +28,18 @@
 3. `write_rows()`：按固定列头 `id,name,email,age,score` 写出结果文件。
 
 ## 3) 如何运行/测试（优先 Docker 本地流程）
-> 以下命令在仓库根目录执行：`/home/runner/work/test/test`
+> 以下命令在仓库根目录执行：`<repo-root>`
 
 ### A. Docker 本地测试（录屏必须包含）
 ```bash
-cd /home/runner/work/test/test/answer/csv-cleaner-cli
+cd <repo-root>/answer/csv-cleaner-cli
 
 # 1) 构建镜像（锁定 Python 3.11.9）
 docker build -t csv-cleaner-cli-local -f environment/Dockerfile .
 
 # 2) 容器内跑测试（标准方式）
 docker run --rm \
-  -v /home/runner/work/test/test/answer/csv-cleaner-cli:/workspace \
+  -v "$(pwd)":/workspace \
   -w /workspace \
   csv-cleaner-cli-local \
   bash -lc "python --version && bash tests/test.sh"
@@ -49,7 +49,7 @@ docker run --rm \
 
 ### B. 非 Docker（本机快速验证）
 ```bash
-cd /home/runner/work/test/test/answer/csv-cleaner-cli
+cd <repo-root>/answer/csv-cleaner-cli
 bash tests/test.sh
 ```
 
