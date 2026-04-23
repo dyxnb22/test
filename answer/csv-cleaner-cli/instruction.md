@@ -41,7 +41,9 @@ The file may contain extra whitespace, blank lines, invalid values, and duplicat
 Use these commands exactly as-is:
 
 ```bash
-cd /home/runner/work/test/test/answer/csv-cleaner-cli/environment
+cd /home/runner/work/test/test
+TASK_DIR="$(pwd)/answer/csv-cleaner-cli"
+cd "$TASK_DIR/environment"
 docker build -t csv-cleaner-cli:latest .
 ```
 
@@ -49,7 +51,7 @@ Run the solver inside Docker (mounting the task directory from this repository):
 
 ```bash
 docker run --rm \
-  -v /home/runner/work/test/test/answer/csv-cleaner-cli:/workspace \
+  -v "$TASK_DIR:/workspace" \
   --entrypoint bash \
   csv-cleaner-cli:latest \
   -lc "bash /workspace/solution/solve.sh"
@@ -59,7 +61,7 @@ Run the test inside Docker:
 
 ```bash
 docker run --rm \
-  -v /home/runner/work/test/test/answer/csv-cleaner-cli:/workspace \
+  -v "$TASK_DIR:/workspace" \
   --entrypoint bash \
   csv-cleaner-cli:latest \
   -lc "python /workspace/tests/test_logic.py"
@@ -68,7 +70,7 @@ docker run --rm \
 Or run the full test entrypoint locally:
 
 ```bash
-cd /home/runner/work/test/test/answer/csv-cleaner-cli
+cd "$TASK_DIR"
 bash tests/test.sh
 ```
 
