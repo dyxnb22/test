@@ -41,7 +41,6 @@ The file may contain extra whitespace, blank lines, invalid values, and duplicat
 Use these commands exactly as-is:
 
 ```bash
-cd /home/runner/work/test/test
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 TASK_DIR="$REPO_ROOT/answer/csv-cleaner-cli"
 cd "$TASK_DIR/environment"
