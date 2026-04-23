@@ -42,7 +42,8 @@ Use these commands exactly as-is:
 
 ```bash
 cd /home/runner/work/test/test
-TASK_DIR="$(pwd)/answer/csv-cleaner-cli"
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+TASK_DIR="$REPO_ROOT/answer/csv-cleaner-cli"
 cd "$TASK_DIR/environment"
 docker build -t csv-cleaner-cli:latest .
 ```
