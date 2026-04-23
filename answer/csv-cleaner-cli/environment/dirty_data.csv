@@ -8,3 +8,5 @@ abc, Eve, eve@example.com, 22, 77
 5, frank, frank@example.com, -1, 60.1
 
 6,  grace hopper , GRACE@EXAMPLE.COM , 85, 100
+@,  !!! ??? , not-an-email, age??, ninety
+0, 张三, zhang@@example..com, 20, 50
