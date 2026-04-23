@@ -1,8 +1,8 @@
 version = "1.0"
 
 [metadata]
-author_name = "Copilot Agent"
-author_email = "agent@example.com"
+author_name = "Diao Yuxuan"
+author_email = "diaoyuxuan@foxmail.com"
 difficulty = "medium"
 category = "software-engineering"
 tags = ["python", "csv", "cli", "data-cleaning"]
