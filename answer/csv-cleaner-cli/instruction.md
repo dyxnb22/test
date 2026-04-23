@@ -36,3 +36,44 @@ The file may contain extra whitespace, blank lines, invalid values, and duplicat
 - Use Python 3.11.
 - Do not hardcode final output rows.
 - The solution must be deterministic and robust.
+
+## Exact commands for this repository (`dyxnb22/test`)
+Use these commands exactly as-is:
+
+```bash
+cd /home/runner/work/test/test/answer/csv-cleaner-cli/environment
+docker build -t csv-cleaner-cli:latest .
+```
+
+Run the solver inside Docker (mounting the task directory from this repository):
+
+```bash
+docker run --rm \
+  -v /home/runner/work/test/test/answer/csv-cleaner-cli:/workspace \
+  --entrypoint bash \
+  csv-cleaner-cli:latest \
+  -lc "bash /workspace/solution/solve.sh"
+```
+
+Run the test inside Docker:
+
+```bash
+docker run --rm \
+  -v /home/runner/work/test/test/answer/csv-cleaner-cli:/workspace \
+  --entrypoint bash \
+  csv-cleaner-cli:latest \
+  -lc "python /workspace/tests/test_logic.py"
+```
+
+Or run the full test entrypoint locally:
+
+```bash
+cd /home/runner/work/test/test/answer/csv-cleaner-cli
+bash tests/test.sh
+```
+
+Expected successful test output:
+
+```text
+PASS
+```
