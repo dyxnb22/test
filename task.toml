@@ -8,9 +8,9 @@ version = "1.0"
 # ---------------------------------------------------------
 [metadata]
 # 你的名字（责任人）
-author_name = "Zhang San"
+author_name = "Diao Yuxuan"
 # 你的联系方式（出bug了找谁）
-author_email = "zhangsan@example.com"
+author_email = "714833073@qq.com"
 
 # 难度分级：easy (入门), medium (进阶), hard (专家)
 difficulty = "medium" 
